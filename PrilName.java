@@ -34,14 +34,14 @@ public class PrilName {
             LocalDate.parse(data[3], DateTimeFormatter.ofPattern("dd.MM.yyyy"));
 
         } catch (Exception e) {
-            throw new InputDataException("Введенный формат не соответствует dd.mm.yyyy");
+            throw new InputDataException("Введенное значение не соответствует формату dd.mm.yyyy");
         }
 
         try {
             // Проверяем номер телефона на корректность формата
             Long.parseLong(data[4]);
         } catch (NumberFormatException e) {
-            throw new InputDataException("Введен неверный формат номера телефона");
+            throw new InputDataException("Введен неверный формат номера телефона.Введите целочисленное значение без знаков и символов");
         }
 
         // Проверяем пол
